@@ -1,0 +1,314 @@
+.Container{
+    height: 100%;
+   
+    
+    
+}
+
+@media screen and (min-width: 300px) {
+    .logout {
+        padding: 10px;
+        right: 0;
+        background-color: blanchedalmond;
+    }
+}
+
+.title{
+    text-align: center;
+    background-color: #7289da;
+    padding: 1rem;
+    
+}
+
+.logout{
+    position: absolute;
+    background-color: white;
+    /* width: 10%; */
+    align-self: flex-end;
+    padding: .5rem;
+    right: 4rem;
+    top:1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    transition: .3s;
+}
+.logout:hover{
+    transform: scale(1.1);
+}
+a{
+    transition: .3s;
+}
+
+a:hover{
+    color: black;
+    
+}
+
+.listContainer{
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    
+}
+
+.header{
+    padding: 3rem;
+    text-align: center;
+    font-weight: bold;
+    /* font-size: 1rem; */
+    background-color: white;
+    transition: 0.3s;
+    /* width: 5vw; */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: 1px solid black;
+    font-size: larger;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.addDayButton{
+    
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    background-color: lightseagreen;
+    transition: 0.1s;
+    border: none;
+    margin-bottom: 1rem;
+    width: 30%;
+}
+
+.addDayButton:hover{
+    transform: scale(1.1);
+}
+
+.red{
+    background-color: red;
+}  
+
+.listItem{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+    margin-top: 2rem;
+    border-radius: 10px;
+    background-color: black;
+    
+}
+
+.info{
+    
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    
+    width: 25vw;
+   
+    overflow-y: scroll;
+   
+}
+
+
+
+.item{
+    /* margin-top: 1rem; */
+    margin-right: 2rem;
+    margin-left: 2rem;
+    padding: 1rem;
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    /* box-shadow: 2px 0px 16px 2px rgba(0,0,0,0.5); */
+    border-radius: 10px;
+    font-size: larger;
+    color: black;
+    
+}
+
+.deleteButton{
+    text-align: center;
+    justify-self: flex-end;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.deleteButton:hover{
+    background-color: red;
+    color: white;
+}
+
+.inputForm{
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cal, .name{
+    font-size: 12px;
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.cal::-webkit-outer-spin-button,
+.cal::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.info::-webkit-scrollbar
+{
+	height: 5px;
+}
+
+.info::-webkit-scrollbar:vertical{
+    display: none;
+}
+
+.info::-webkit-scrollbar-thumb
+{
+	background-color: white;
+}
+
+.addArea{
+    display: block;
+}
+
+.activeArea{
+    display: none;
+    background-color: blue;
+}
+
+.arrow{
+    margin-top: 1rem;
+    color: black;
+    
+    border: none;
+    /* background-image: linear-gradient(
+    to left,
+    #fc00ff,
+    #00dbde
+    ); */
+    
+    cursor: pointer;
+    
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.addButton{
+    color: black;
+    font-weight: bold;
+    border: none;
+    /* background-image: linear-gradient(
+    to left,
+    #fc00ff,
+    #00dbde
+    ); */
+    
+    margin-top: 1rem;
+    padding: .3rem;
+    border-radius: 20px;
+    transition: 0.3s;
+    
+}
+
+input{
+    border-radius: 5px;
+    padding: .5rem;
+    font-weight: bold;
+}
+
+.deleteDay{
+    font-size: 15px;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    border-top: 2px solid black;
+    transition: .5s;
+    background-color: white;
+    color: black;
+    /* border-radius: 10px; */
+}
+
+.deleteDay:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .logout {
+        padding: 5px;
+        font-size: 1rem;
+        right: .5rem;
+        top:1.3rem;
+        background-color: blanchedalmond;
+    }
+
+    .deleteDay{
+        font-size: 4px;
+    }
+
+    .addButton{
+        font-size: 6px;
+    }
+
+    .cal,.name{
+        font-size: 4px;
+        width: 50%;
+    }
+
+    .listItem{
+        height: 10%;
+    }
+}
+
+.addDayArea{
+    background-color: rgb(100,205,171);
+    width: 50%;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.addDayForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addDayForm > input{
+    width: 30%;
+    margin-top: 1rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.editButton{
+    text-align: center;
+    justify-self: flex-end;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.editButton:hover{
+    background-color: red;
+    color: white;
+}
