@@ -4,11 +4,14 @@ import {useSelector} from 'react-redux';
 import Display from '../components/Display';
 import {url} from '../constants/constants';
 import {addDay} from '../apiCalls/Apicalls';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'
+
 
 function Home(){
 
     const [meals,setMeals] = useState('');
-
+    const [startDate, setStartDate] = useState(new Date());
     const id = useSelector((state) => state.user.id) || window.sessionStorage.getItem('id');
     const token = useSelector((state) => state.user.token) || window.sessionStorage.getItem('token');
     const getMeals = async() =>{
@@ -30,10 +33,18 @@ function Home(){
     const handleDayAdd = async(e) => {
         e.preventDefault();
         const date = e.target[0].value;
+        console.log(date);
+        
         const result = await addDay(token,id,date);
         if(result.status === 'ok'){
             getMeals();
         }
+    }
+
+    const handleDate = (date) => {
+        
+        setStartDate(date);
+        console.log(`${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`)
     }
 
     return(
@@ -49,7 +60,8 @@ function Home(){
                     </h1>
                     <div className='addDayArea'>
                         <form onSubmit={handleDayAdd} className='addDayForm'>
-                            <input type='date' required={true} max={new Date().toISOString().split('T')[0]}></input>
+                            {/* <input type='date' required={true} max={new Date().toISOString().split('T')[0]}></input> */}
+                            <DatePicker selected={startDate} onChange={handleDate} className='datepicker' maxDate={new Date()}/>
                             <button className='addDayButton'>Add Day</button>
                         </form>
                     </div>
